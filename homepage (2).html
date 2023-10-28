@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<head></head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyPortfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <style>
+  body {
+    background-color:#12202d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+   
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: white;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-radius: 20px;
+    border-bottom: #195998;
+    transition: all 20.5s ease;
+  }
+  
+.sticky {
+  top: 100px; /* Change this value as needed to control the sliding distance */
+}
+
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 5px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: "Helvetica Neue", sans-serif;
+  }
+  
+  nav ul li a:hover {
+    color: lightskyblue;
+    border-radius: 5px;
+  }
+  
+  /* Dropdown Styles */
+  nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  nav ul li:hover ul {
+    display: block;
+  }
+  
+  nav ul li ul li {
+    display: block;
+  }
+  
+  nav ul li ul li a {
+    color: #f4f4f4;
+    padding: 10px 15px;
+  }
+  
+  .portfolio-item3 {
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    align-items:end;
+  }
+  .portfolio-item3 {
+    position: relative;
+    max-width: 300px;
+  }
+  .portfolio-item3 img {
+    width: 100%;
+    border-radius: 5px;
+    max-width: fit-content;
+  }
+  .overlay3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .overlay3 h3{
+    color: #195998;
+  }
+  .overlay3 p {
+    color: #f4f4f4;
+  }
+  .portfolio-item3:hover .overlay3 {
+    opacity: 1;
+  }
+  /* Content Section Styles */
+  
+  #portfolio {
+    height: 600px;
+    width: 100%;
+    background-color:white;
+    background-size: cover;
+    border-radius: 5px;
+  }
+  .portfolio-item2 {
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    align-items: center;
+  }
+  .portfolio-item2 {
+    position: relative;
+    max-width: 300px;
+  }
+  .portfolio-item2 img {
+    width: 90%;
+    border-radius: 5px;
+  }
+  .overlay2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .overlay2 h3 {
+    color: #195998;
+  }
+  .overlay2 p {
+    color: #f4f4f4;
+    }
+  .portfolio-item2:hover .overlay2 {
+    opacity: 1;
+  }
+  
+  #portfolio h2{
+    float: right;
+    margin-top: 10px;
+    color:#195998;
+  }
+  /* Styles for the portfolio section */
+#portfolio {
+  background-image: url(reflection.png);
+  padding: 50px 0;
+  text-align: center;
+}
+.portfolio-item {
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.portfolio-item {
+  position: relative;
+  max-width: 300px;
+  flex-basis: 30%;
+}
+
+.portfolio-item img {
+  width: 100%;
+  border-radius: 5px;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.overlay h3 {
+  color:#195998;
+}
+.overlay p{
+  color: white;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .portfolio-item,
+  .portfolio-item2,
+  .portfolio-item3 {
+      flex-basis: 100%;
+  }
+}
+  
+  #contact {
+    background-color: white;
+    color: black;
+    padding: 50px 0;
+    text-align: center;
+    height: 400px;
+    width: 100%;
+  }
+  
+  .contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: black;
+  }
+  
+  .social-icons {
+    font-size: 24px;
+    margin-top: 20px;
+    color: yellow;
+  }
+  
+  .social-icons a {
+    color: palevioletred;
+    margin: 10px 10px;
+    transition: color 0.3s;
+    filter: brightness(100%);
+  }
+  
+  #about {
+    display: flex;
+    width: 100%;
+    height: 500%;
+}
+
+.about-left {
+    width: 50%;
+    background-color: #12202d;
+    border-bottom-right-radius: 100px;
+    
+}
+.about-left h4{
+  color: #f4f4f4;
+  
+}
+.about-left h2 u{
+  color: #f4f4f4;
+  
+}
+.about-right {
+    width: 50%;
+    background-color: #195998;
+    color: white;
+    border-top-left-radius:100px;
+}
+
+.about-content {
+    display: flex;
+}
+
+.about-image img {
+    max-width: 200px;
+    margin: 20px;
+}
+
+.about-text {
+    padding: 20px;
+}
+
+.about-text h3 {
+    color: white;
+}
+
+.about-text p {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.about-text ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    margin: 5px 0;
+}
+
+  /* Home Section Styles */
+  #home {
+    text-align: center;
+    background-image: url('city.jpg');
+    padding: 50px;
+    color: white;
+    height: 600px;
+    background-repeat: no-repeat;
+    font-size: x-large;
+    border-radius: 2px;
+  }
+  
+  #home h2 {
+    color:#195998;
+    font-size: xx-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    float: left;
+  }
+  #home h5 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    float: left;
+    margin-top: 30px;
+  }
+  #home p {
+    color:white;
+    font-size: 35px;
+    margin-bottom: 20%;
+    text-align: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20%;
+   
+  }
+  .sliding-background {
+    background-image: url('city.jpg');
+    background-size: cover;
+    color: white;
+    height: 600px;
+    background-repeat: no-repeat;
+    font-size: x-large;
+    border-radius: 2px;
+    animation: slide 500s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        background-image: url('city.jpg');
+    }
+    25% {
+        background-image: url('highway.png');
+    }
+    50% {
+        background-image: url('workhard.png');
+    }
+    75% {
+      background-image: url('sky.png');
+  }
+    100% {
+        background-image: url('city.jpg');
+    }
+}
+
+  /* New styles for transitions and animations */
+  .sliding-background {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sliding-background h5 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 24px;
+    color:white;
+    transition: transform 0.5s;
+  }
+
+  .sliding-background h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-top: 20px;
+    color: #333;
+    transition: transform 5.5s;
+  }
+
+  .sliding-background p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    transition: transform 10.5s;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    color: #333;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+  }
+
+  /* Animation for the sliding text */
+  .sliding-background h5,
+  .sliding-background h2,
+  .sliding-background p {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  .sliding-background.show-content h5,
+  .sliding-background.show-content h2,
+  .sliding-background.show-content p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+  
+  /* Resume Section Styles */
+  #resume {
+    height: 600px;
+    background-color: #12202d;
+    border-radius: 5px;
+  }
+  
+  #resume h2 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+  }
+  #resume h3 u{
+    color :#f4f4f4;
+  }
+  
+  #resume p {
+    color: white;
+  }
+  .resume-content {
+    width: 100%;
+    overflow: hidden;
+}
+.slide {
+    float: left;
+    width: 100%;
+}
+.slide h4 {
+    text-align: center;
+}
+.slide-content {
+    display: none;
+}
+.active {
+    display: block;
+}
+  
+  /* Footer Styles */
+  footer {
+    background-color: #195998;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 5px 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 5px;
+  }
+  footer {
+    background-color: #195998;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-icons {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: palevioletred;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+/* Media query for responsiveness */
+@media only screen and (max-width: 768px) {
+    .social-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-icons a {
+        margin: 5px;
+    }
+}
+.return-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #3b5998; /* Change to your preferred color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.return-btn:hover {
+  background-color:rgba(0, 0, 0, 0.5) /* Change to your preferred color */
+}
+.arrow {
+  margin-right: 5px;
+}
+
+
+  </style>
+  <body>
+    <header>
+      <nav><b>
+        <ul>
+          <li><a href="#home"><u>Home.</u></a></li>
+          <li><a href="#about"><u>About.</u></a></li>
+          <li><a href="#portfolio"><u>Portfolio.</u></a></li>
+          <li><a href="#resume"><u>Resume.</u></a></li>
+          <li><a href="#contact"><u>Contact.</u></a></li>
+          <a href="/Desktop/webnew/CV.pdf" download>Download cv</a>
+        </ul>
+        </nav>
+    </header>
+    <section id="home" class="sliding-background">
+      <h5>Welcome</h5>
+      <h2><u>HOME.</u></h2>
+      <p><b style="color:#195998;">HELLO!!</b> ,I am <b>Finney Abuko</b> Welcome to my world. I love programming, web development, and graphic designing.</p>
+      <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+          <a href="https://www.twitter.com/" target="_blank" class="fa fa-twitter"></a>
+          <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
+          <a href="https://www.linkedin.com/" target="_blank" class="fa fa-linkedin"></a>
+          <a href="https://www.email.com/" target="_blank" class="fa fa-email"></a>
+      </div>
+      <script>
+        // jQuery script for the animation trigger
+        $(document).ready(function () {
+          $(".sliding-background").addClass("show-content");
+        });
+      </script>
+      
+  </section>
+  
+
+  <section id="about">
+    
+    <div class="about-content">
+        <div class="about-left">
+          <h4>Discover.</h4>
+          <h2><u>ABOUT ME.</u></h2> 
+            <div class="about-image">
+                <img src="Me.png" alt="Profile Picture">
+            </div>
+        </div>
+        <div class="about-right">
+            <div class="about-text">
+                <h3>Who Am I?</h3>
+                <p>
+                    I'm a passionate web developer with a strong background in front-end
+                    and back-end technologies. I love creating beautiful and functional
+                    websites that make a difference. In my free time, I enjoy hiking,
+                    photography, and exploring new technologies.
+                </p>
+                <h3><u>My Skills.</u></h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                </ul>
+                <h3><u>My Interests.</u></h3>
+                <p>
+                    Apart from coding, I have a keen interest in digital marketing, UI/UX design, and
+                    entrepreneurship. I believe in the power of technology to transform businesses
+                    and improve people's lives.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="portfolio">
+  <h2><u>Portfolio</u></h2>
+  <div class="portfolio-container">
+      <div class="portfolio-item">
+          <img src="sky.png" alt="Project 1">
+          <div class="overlay">
+              <h3>Skyplatform.</h3>
+              <p>weather navigation tool,brief and accurate.</p>
+          </div>
+      </div>
+
+      <div class="portfolio-item2">
+          <img src="highway.png" alt="Project 2">
+          <div class="overlay2">
+              <h3>Highwayexpo.</h3>
+              <p>Exposes public to smart traffic control.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item3">
+          <img src="highway.png" alt="Project 3">
+          <div class="overlay3">
+              <h3>NewME.</h3>
+              <p>Photo editing tool.</p>
+          </div>
+        </div>
+
+      </div><!-- Add more portfolio items as needed -->
+</section>
+
+    <section id="resume">
+        <h2><u>RESUME</u></h2>
+        <h3><u>My Resume</u></h3>
+      
+        <div class="resume-content">
+            <div class="slide work-experience active ">
+                <h4>Work Experience</h4>
+                <!-- Add work experience details here -->
+            </div>
+
+            <div class="slide skills">
+                <h4>Skills</h4>
+           Finney
+            </div>
+
+            <div class="slide certifications">
+                <h4>Certifications and Training</h4>
+             finnney
+            </div>
+
+            <div class="slide references">
+                <h4>References</h4>
+                finnney
+            </div>  
+        
+          </div>
+          <div class="cv">
+            <a href="/assets/files/Resume_Akintayo.pdf" download>download CV</a>
+          </div>
+          
+    </section>
+    <script>
+      const slides = document.querySelectorAll('.slide');
+      let currentSlide = 0;
+      const slideInterval = setInterval(nextSlide, 3000);
+
+      function nextSlide() {
+          slides[currentSlide].classList.remove('active');
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.add('active');
+      }
+  </script>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+
+      <div class="contact-content">
+        <p>Feel free to reach out to me on social media:</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+            <a href="https://www.twitter.com/" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://www.linkedin.com/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.whatsapp.com/" target="_blank" class="fa fa-whatsapp"></a>
+            
+        </div>
+        <a href="#" class="return-btn"><i class="fa fa-arrow-up arrow"></i>Return to Top</a>
+    </div>
+   
+    </section>
+
+    <script>
+      $(document).ready(function () {
+        // Smooth scrolling functionality
+        $("a").on('click', function (event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function () {
+              window.location.hash = hash;
+            });
+          }
+        });
+
+        // Add your custom JavaScript functionalities here
+        // Example:
+        // Add slide or animation code here
+      });
+    </script>
+    <footer>
+      <div class="footer-content">
+          <p>&copy; 2023FinneyAbuko. All rights reserved.</p>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+              <a href="https://www.twitter.com/" target="_blank" class="fa fa-twitter"></a>
+              <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
+              <a href="https://www.linkedin.com/" target="_blank" class="fa fa-linkedin"></a>
+              <a href="https://www.email.com/" target="_blank" class="fa fa-email"></a>
+
+          </div>
+      </div>
+  </footer>
+  </body>
+</html>
